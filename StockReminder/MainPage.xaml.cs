@@ -38,7 +38,8 @@ namespace StockReminder
         {
             this.InitializeComponent();
 
-            Messages.Add("Connecting...");
+            var url = ServerURI_local;
+            Messages.Add($"Connecting {url}...");
 
             _hubConnection = new HubConnectionBuilder()
                 .WithUrl(ServerURI_local)
