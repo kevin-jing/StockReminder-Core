@@ -32,7 +32,7 @@ namespace StockReminder
         public ObservableCollection<string> Messages { get; } = new ObservableCollection<string>();
         private HubConnection _hubConnection;
         private const string ServerURI = "https://stockmonitor-core.azurewebsites.net/chat";
-        private const string ServerURI_local = "http://localhost:58281/server-push";
+        private const string ServerURI_local = "http://localhost:62601/server-push";
 
         public MainPage()
         {
