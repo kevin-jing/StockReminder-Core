@@ -31,18 +31,18 @@ namespace StockReminder
     {
         public ObservableCollection<string> Messages { get; } = new ObservableCollection<string>();
         private HubConnection _hubConnection;
-        private const string ServerURI = "https://stockmonitor-core.azurewebsites.net/chat";
+        private const string ServerURI = "https://stockmonitor-razor.azurewebsites.net/server-push";
         private const string ServerURI_local = "http://localhost:62601/server-push";
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            var url = ServerURI_local;
+            var url = ServerURI;
             Messages.Add($"Connecting {url}...");
 
             _hubConnection = new HubConnectionBuilder()
-                .WithUrl(ServerURI_local)
+                .WithUrl(url)
                 .Build();
 
             _hubConnection.Closed += HubConnectionClosed;
